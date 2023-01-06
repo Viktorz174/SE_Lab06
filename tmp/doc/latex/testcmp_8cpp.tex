@@ -1,0 +1,48 @@
+\hypertarget{testcmp_8cpp}{}\doxysection{Файл testcmp.\+cpp}
+\label{testcmp_8cpp}\index{testcmp.cpp@{testcmp.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}mycomplex.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для testcmp.\+cpp\+:
+% FIG 0
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{testcmp_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{testcmp_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{testcmp_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{testcmp.cpp@{testcmp.cpp}!main@{main}}
+\index{main@{main}!testcmp.cpp@{testcmp.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{testcmp_8cpp_source}{testcmp.\+cpp}} строка \mbox{\hyperlink{testcmp_8cpp_source_l00006}{6}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ\ РєР»Р°СЃСЃР°\ РєРѕРјРїР»РµРєСЃРЅС‹С…\ С‡РёСЃРµР»}}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ A,\ B(-\/4),\ C(23.0,\ 45.9);}
+\DoxyCodeLine{00011\ \ \ \ \ cout\ <<\ A\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ B\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ C\ <<\ endl;}
+\DoxyCodeLine{00012\ \ \ \ \ A\ =\ B\ +\ C;}
+\DoxyCodeLine{00013\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}A\ =\ B\ +\ C,\ A\ =\ "{}}\ <<\ A\ <<\ endl;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ M\ =\ B\ -\/\ C;}
+\DoxyCodeLine{00016\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}M\ =\ B\ -\/\ C,\ M\ =\ "{}}\ <<\ M\ <<\ endl;}
+\DoxyCodeLine{00017\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}M\ *\ A\ =\ "{}}\ <<\ M\ *\ A\ <<\ endl;}
+\DoxyCodeLine{00018\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}M\ /\ 4.45\ =\ "{}}\ <<\ M\ /\ 4.45\ <<\ endl;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ D;}
+\DoxyCodeLine{00021\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Enter\ complex\ number\ D\ =\ "{}};}
+\DoxyCodeLine{00022\ \ \ \ \ cin\ >>\ D;}
+\DoxyCodeLine{00023\ \ \ \ \ A\ +=\ C\ +\ D;}
+\DoxyCodeLine{00024\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}D\ =\ "{}}\ <<\ D\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nA\ =\ "{}}\ <<\ A\ <<\ endl;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
