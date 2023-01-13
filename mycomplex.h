@@ -1,68 +1,46 @@
 /**
 \file mycomplex.h
-\brief Заголовочный файл класса Complex
+\brief Г‡Г ГЈГ®Г«Г®ГўГ®Г·Г­Г»Г© ГґГ Г©Г« ГЄГ«Г Г±Г±Г  Complex
 */
 
 #ifndef _MY_COMPLEX_H_
 #define _MY_COMPLEX_H_
+
 #include <iostream>
 
 using namespace std;
 
-
 /**
-\brief Класс комплексного числа
+\brief ГЉГ«Г Г±Г± ГЄГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГЈГ® Г·ГЁГ±Г«Г 
 */
-
 
 class Complex
-
-/**
-\brief Действительная чать
-*/
-
 {
-    double re;
 /**
-\brief Минимая чать
+\brief Г„ГҐГ©Г±ГІГўГЁГІГҐГ«ГјГ­Г Гї Г·Г ГІГј
 */
-	double im;
-public:
-    Complex (double are = 0, double aim = 0);
-    Complex (const Complex & );
-    ~Complex();
+    double Re;
+/**
+\brief ГЊГЁГ­ГЁГ¬Г Гї Г·Г ГІГј
+*/
+    double Im;
 
-void Set (double are, double aim = 0);
+    public:
+    Complex(double aRe = 0, double aIm = 0);
+    Complex(const Complex &);
+    Complex &operator = (const Complex&);
+    Complex &operator = (const double&);
+    Complex &operator += (const Complex&);
+    Complex &operator += (const double&);
+    Complex &operator -= (const Complex&);
+    Complex &operator -= (const double&);
+    Complex &operator *= (const Complex&);
+    Complex &operator *= (const double&);
+    Complex &operator /= (const Complex&);
+    Complex &operator /= (const double&);
 
-    operator double ();
-    double abs ();
-
-    friend istream & operator >> (istream &, Complex &);
-    friend ostream & operator << (ostream &, Complex &);
-            Complex operator + (const Complex &);
-            Complex operator - (const Complex &);
-            Complex operator + (const double &);
-
-    friend
-            Complex operator + (const double &, const Complex &);
-            Complex operator - (const double &);
-
-    friend
-            Complex operator - (const double &, const Complex &);
-            Complex operator * (const Complex &);
-            Complex operator * (const double &);
-
-    friend
-            Complex operator * (const double &, const Complex &);
-            Complex operator / (const double &);
-            Complex & operator += (const Complex &);
-            Complex & operator -= (const Complex &);
-            Complex & operator *= (const Complex &);
-            Complex & operator += (const double &);
-            Complex & operator -= (const double &);
-            Complex & operator *= (const double &);
-            Complex & operator /= ( const double &);
-            Complex & operator = (const Complex &);
-            Complex & operator = (const double &);
-};
+    void Set(double aRe, double aIm);
+    operator double();
+    double abs();
+}
 #endif
