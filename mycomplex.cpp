@@ -1,7 +1,8 @@
 /**
 \file mycomplex.cpp
-\brief Заголовочный файл класса Copmlex
+\brief Г‡Г ГЈГ®Г«Г®ГўГ®Г·Г­Г»Г© ГґГ Г©Г« ГЄГ«Г Г±Г±Г  Complex
 */
+
 #include <iostream>
 #include <cmath>
 #include "mycomplex.h"
@@ -9,349 +10,327 @@
 using namespace std;
 
 /**
-\brief Конструктор класса
-\param are Действительная составляющая
-\param aim Мнимая составляющая
+\brief ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ«Г Г±Г±Г 
+\param aRe Г„ГҐГ©Г±ГІГўГЁГІГҐГ«ГјГ­Г Гї Г±Г®Г±ГІГ ГўГ«ГїГѕГ№Г Гї
+\param aIm ГЊГ­ГЁГ¬Г Гї Г±Г®Г±ГІГ ГўГ«ГїГѕГ№Г Гї
 */
-
-    Complex :: Complex (double are, double aim)
-    {
-    re = are;
-    im = aim;
-    }
+Complex::Complex (double aRe, double aIm)
+{
+    Re = aRe;
+    Im = aIm;
+}
 
 /**
-\brief Конструктор класса через указатель
-\param arval.re Действительная составляющая
-\param arval.im Мнимая составляющая
+\brief ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ«Г Г±Г±Г  Г·ГҐГ°ГҐГ§ ГіГЄГ Г§Г ГІГҐГ«Гј
+\param aRval.Re Г„ГҐГ©Г±ГІГўГЁГІГҐГ«ГјГ­Г Гї Г±Г®Г±ГІГ ГўГ«ГїГѕГ№Г Гї
+\param aRval.Im ГЊГ­ГЁГ¬Г Гї Г±Г®Г±ГІГ ГўГ«ГїГѕГ№Г Гї
 */
-
-    Complex :: Complex (const Complex & arval)
-    {
-    re = arval.re;
-    im = arval.im;
-    }
+Complex::Complex (const Complex &aRval)
+{
+    Re = aRval.Re;
+    Im = aRval.Im;
+}
 
 /**
-\brief Деструктор
+\brief Г„ГҐГ±ГІГ°ГіГЄГІГ®Г°
 */
-
-    Complex :: ~Complex()
-    {
-    re = 0.0;
-    im = 0.0;
-    }
+Complex::~Complex()
+{
+    Re = 0.0;
+    Im = 0.0;
+}
 
 /**
-\brief Метод присваивания значения
-\param are Действительная составляющая
-\param aim Мнимая составляющая
+\brief ГЊГҐГІГ®Г¤ ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГї Г§Г­Г Г·ГҐГ­ГЁГї
+\param aRe Г„ГҐГ©Г±ГІГўГЁГІГҐГ«ГјГ­Г Гї Г±Г®Г±ГІГ ГўГ«ГїГѕГ№Г Гї
+\param aIm ГЊГ­ГЁГ¬Г Гї Г±Г®Г±ГІГ ГўГ«ГїГѕГ№Г Гї
 */
-
-    void Complex :: Set (double are, double aim)
-    {
-    re = are;
-    im = aim;
-    }
+void Complex::Set (double aRe, double aIm)
+{
+    Re = aRe;
+    Im = aIm;
+}
 
 /**
-\brief Метод присваивания значения
-\param are Действительная составляющая
-\param aim Мнимая составляющая
-\return Модуль
+\brief ГЊГҐГІГ®Г¤ ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГї Г§Г­Г Г·ГҐГ­ГЁГї
+\param aRe Г„ГҐГ©Г±ГІГўГЁГІГҐГ«ГјГ­Г Гї Г±Г®Г±ГІГ ГўГ«ГїГѕГ№Г Гї
+\param aIm ГЊГ­ГЁГ¬Г Гї Г±Г®Г±ГІГ ГўГ«ГїГѕГ№Г Гї
+\return ГЊГ®Г¤ГіГ«Гј
 */
-
-    Complex :: operator double()
-    {
+Complex::operator double()
+{
     return abs();
-    }
+}
 
 /**
-\brief Метод абсолютное значение
-\return Модуль
+\brief ГЊГҐГІГ®Г¤ Г ГЎГ±Г®Г«ГѕГІГ­Г®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ
+\return ГЊГ®Г¤ГіГ«Гј
 */
-
-    double Complex :: abs()
-    {
-    return sqrt(re * re + im * im);
-    }
+double Complex::abs()
+{
+    return sqrt(Re * Re + Im * Im);
+}
 
 /**
-\brief Оператор +
-\param &arval Комплексное число
-\return Сумма
+\brief ГЋГЇГҐГ°Г ГІГ®Г° +
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return Г‘ГіГ¬Г¬Г 
 */
-
-    Complex Complex :: operator + (const Complex & arval )
-    {
+Complex Complex::operator + (const Complex &aRval)
+{
     Complex Result;
-    Result.re = re + arval.re;
-    Result.im = im + arval.im ;
+    Result.Re = Re + aRval.Re;
+    Result.Im = Im + aRval.Im ;
     return Result;
-    }
+}
 
 /**
-\brief Оператор -
-\param &arval Комплексное число
-\return Разность
+\brief ГЋГЇГҐГ°Г ГІГ®Г° -
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return ГђГ Г§Г­Г®Г±ГІГј
 */
-
-    Complex Complex :: operator - (const Complex & arval)
-    {
+Complex Complex::operator - (const Complex &aRval)
+{
     Complex Result;
-    Result.re = re - arval.re;
-    Result.im = im - arval.im;
+    Result.Re = Re - aRval.Re;
+    Result.Im = Im - aRval.Im;
     return Result;
-    }
+}
 
 /**
-\brief Оператор +
-\param &arval Комплексное число
-\return Сумма
+\brief ГЋГЇГҐГ°Г ГІГ®Г° +
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return Г‘ГіГ¬Г¬Г 
 */
-
-    Complex Complex :: operator + (const double & arval)
-    {
-    Complex result;
-    result.re = re + arval;
-    result.im = im;
-    return result;
-    }
-
-/**
-\brief Оператор -
-\param &arval Комплексное число
-\return Разность
-*/
-
-    Complex Complex :: operator - (const double & arval)
-    {
-    Complex Result (*this);
-    Result.re = re - arval;
-    return Result;
-    }
-
-/**
-\brief Оператор *
-\param &arval Комплексное число
-\return Произведение
-*/
-
-    Complex Complex  :: operator * (const Complex & arval)
-    {
+Complex Complex::operator + (const double &aRval)
+{
     Complex Result;
-    Result.re = re * arval.re - im * arval.im;
-    Result.im = re * arval.im + im * arval.re;
+    Result.Re = Re + aRval;
+    Result.Im = Im;
     return Result;
-    }
+}
 
 /**
-\brief Оператор *
-\param &arval Комплексное число константа
-\return Произведение
+\brief ГЋГЇГҐГ°Г ГІГ®Г° -
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return ГђГ Г§Г­Г®Г±ГІГј
 */
+Complex Complex:: operator - (const  double &aRval)
+{
+    Complex Result(*this);
+    Result.Re = Re - aRval;
+    return Result;
+}
 
-    Complex Complex :: operator * (const double & arval)
-    {
+/**
+\brief ГЋГЇГҐГ°Г ГІГ®Г° *
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ
+*/
+Complex Complex::operator * (const Complex &aRval)
+{
     Complex Result;
-    Result.re =re * arval;
-    Result.im =im * arval;
+    Result.Re = Re * aRval.Re - Im * aRval.Im;
+    Result.Im = Re * aRval.Im + Im * aRval.Re;
     return Result;
-    }
+}
 
 /**
-\brief Оператор /
-\param &arval Комплексное число
-\return Частное
+\brief ГЋГЇГҐГ°Г ГІГ®Г° *
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г® ГЄГ®Г­Г±ГІГ Г­ГІГ 
+\return ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ
 */
-
-    Complex Complex :: operator / (const double & arval)
-    {   Complex Result;
-    Result.re = re / arval;
-    Result.im = im / arval;
+Complex Complex::operator * (const double &aRval)
+{
+    Complex Result;
+    Result.Re = Re * aRval;
+    Result.Im = Im * aRval;
     return Result;
-    }
+}
 
 /**
-\brief Оператор +=
-\param &arval Комплексное число
-\return Сумма
+\brief ГЋГЇГҐГ°Г ГІГ®Г° /
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return Г—Г Г±ГІГ­Г®ГҐ
 */
-
-    Complex & Complex :: operator += (const Complex & arval)
-    {
-    re += arval.re;
-    im += arval.im;
-    return * this;
-    }
+Complex Complex::operator / (const double &aRval)
+{
+    Complex Result;
+    Result.Re = Re / aRval;
+    Result.Im = Im / aRval;
+    return Result;
+}
 
 /**
-\brief Оператор -=
-\param &arval Комплексное число
-\return Разность
+\brief ГЋГЇГҐГ°Г ГІГ®Г° +=
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return Г‘ГіГ¬Г¬Г 
 */
-
-    Complex & Complex :: operator -= (const Complex & arval)
-    {
-    re -= arval.re;
-    im -= arval.im;
-    return * this;
-    }
+Complex &Complex::operator += (const Complex &aRval)
+{
+    Re += aRval.Re;
+    Im += aRval.Im;
+    return *this;
+}
 
 /**
-\brief Оператор *=
-\param &aкval Комплексное число
-\return Разность
+\brief ГЋГЇГҐГ°Г ГІГ®Г° -=
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return ГђГ Г§Г­Г®Г±ГІГј
 */
-
-    Complex & Complex :: operator *= (const Complex & arval)
-    {
-    double tmpre = re;
-    re = re * arval.re - im * arval.im;
-    im = im * arval.re + tmpre * arval.im;
-    return * this;
-    }
+Complex &Complex::operator -= (const Complex &aRval)
+{
+    Re -= aRval.Re;
+    Im -= aRval.Im;
+    return *this;
+}
 
 /**
-\brief Оператор +=
-\param &arval Комплексное число
-\return Сумма
+\brief ГЋГЇГҐГ°Г ГІГ®Г° *=
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ
 */
-
-    Complex & Complex :: operator += (const double & arval)
-    {
-    re += arval;
-    return * this;
-    }
+Complex &Complex::operator *= (const Complex &aRval)
+{
+    double tmpRe = Re;
+    Re = Re * aRval.Re - Im * aRval.Im;
+    Im = Im * aRval.Re + tmpRe * aRval.Im;
+    return *this;
+}
 
 /**
-\brief Оператор -=
-\param &arval Комплексное число
-\return Разность
+\brief ГЋГЇГҐГ°Г ГІГ®Г° +=
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return Г‘ГіГ¬Г¬Г 
 */
-
-    Complex & Complex :: operator -= (const double & arval)
-    {
-    re -= arval;
-    return * this;
-    }
+Complex &Complex::operator += (const double &aRval)
+{
+    Re += aRval;
+    return *this;
+}
 
 /**
-\brief Оператор *=
-\param &arval Комплексное число
-\return Произведение
+\brief ГЋГЇГҐГ°Г ГІГ®Г° -=
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return ГђГ Г§Г­Г®Г±ГІГј
 */
-
-    Complex & Complex :: operator *= (const double & arval)
-    {
-    re *= arval;
-    im *= arval;
-    return * this;
-    }
+Complex &Complex::operator -= (const double &aRval)
+{
+    Re -= aRval;
+    return *this;
+}
 
 /**
-\brief Оператор *=
-\param &arval Комплексное число
-\return Частное
+\brief ГЋГЇГҐГ°Г ГІГ®Г° *=
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ
 */
-
-    Complex & Complex :: operator /= (const double & arval)
-    {
-    re /= arval;
-    im /= arval;
-    return * this;
-    }
+Complex &Complex::operator *= (const double &aRval)
+{
+    Re *= aRval;
+    Im *= aRval;
+    return *this;
+}
 
 /**
-\brief Оператор =
-\param &arval Комплексное число
-\return Присваивание
+\brief ГЋГЇГҐГ°Г ГІГ®Г° /=
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return Г—Г Г±ГІГ­Г®ГҐ
 */
-
-    Complex & Complex :: operator = (const Complex & arval)
-    {
-    re = arval.re;
-    im = arval.im;
-    return * this;
-    }
+Complex &Complex::operator /= (const double &aRval)
+{
+    Re /= aRval;
+    Im /= aRval;
+    return *this;
+}
 
 /**
-\brief Оператор =
-\param &arval Комплексное число
-\return Присваивание
+\brief ГЋГЇГҐГ°Г ГІГ®Г° =
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return ГЏГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГҐ
 */
-
-    Complex & Complex :: operator = (const double & arval)
-    {
-    re = arval;
-    im = 0.0;
-    return * this;
-    }
+Complex &Complex::operator = (const Complex &aRval)
+{
+    Re = aRval.Re;
+    Im = aRval.Im;
+    return *this;
+}
 
 /**
-\brief Оператор >>
-\param &arval Комплексное число
-\return сдвиг право
+\brief ГЋГЇГҐГ°Г ГІГ®Г° =
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return ГЏГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГҐ
 */
+Complex &Complex::operator = (const double &aRval)
+{
+    Re = aRval;
+    Im = 0.0;
+    return *this;
+}
 
-    istream & operator >> (istream & stream, Complex & arval)
-    {
-    char tmp [256];
-    stream >> arval.re >> arval.im >> tmp;
+/**
+\brief ГЋГЇГҐГ°Г ГІГ®Г° >>
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return Г±Г¤ГўГЁГЈ ГўГЇГ°Г ГўГ®
+*/
+istream &operator >> (istream& stream, Complex &aRval)
+{
+    char tmp[256];
+    stream >> aRval.Re >> aRval.Im >> tmp;
     return stream;
-    }
+}
 
 /**
-\brief Оператор >>
-\param &arval Комплексное число
-\return сдвиг лево
+\brief ГЋГЇГҐГ°Г ГІГ®Г° <<
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return Г±Г¤ГўГЁГЈ ГўГ«ГҐГўГ®
 */
-
-    ostream & operator << (ostream & stream, Complex & arval)
+ostream &operator << (ostream& stream, Complex &aRval)
+{
+    stream << aRval.Re;
+    if(!(aRval.Im < 0))
     {
-    stream << arval.re;
-    if ( ! (arval.im < 0) ) stream << '+';
-    stream << arval.im << 'i';
+        stream << '+';
+        stream << aRval.Im << 'i';
+    }
     return stream;
-    }
-/**
-\brief Оператор +
-\param &arval Комплексное число
-\return Сумма
-*/
+}
 
-    Complex operator + (const double & alval, const Complex & arval)
-    {
+/**
+\brief ГЋГЇГҐГ°Г ГІГ®Г° +
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return Г‘ГіГ¬Г¬Г 
+*/
+Complex operator + (const double& aLval, const Complex &aRval)
+{
     Complex Result;
-    Result.re = alval + arval.re;
-    Result.im = arval.im;
+    Result.Re = aLval + aRval.Re;
+    Result.Im =  aRval.Im;
     return Result;
-    }
+}
 
 /**
-\brief Оператор -
-\param &arval Комплексное число
-\return Разность
+\brief ГЋГЇГҐГ°Г ГІГ®Г° -
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return ГђГ Г§Г­Г®Г±ГІГј
 */
-
-    Complex operator - (const double & alval, const Complex & arval)
-    {
+Complex operator - (const double &aLval, const Complex &aRval)
+{
     Complex Result;
-    Result.re = alval - arval.re;
-    Result.im = -arval.im;
+    Result.Re = aLval - aRval.Re;
+    Result.Im =- aRval.Im;
     return Result;
-    }
+}
 
 /**
-\brief Оператор *
-\param &arval Комплексное число
-\return Произведение
+\brief ГЋГЇГҐГ°Г ГІГ®Г° *
+\param &aRval ГЉГ®Г¬ГЇГ«ГҐГЄГ±Г­Г®ГҐ Г·ГЁГ±Г«Г®
+\return ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ
 */
-
-    Complex operator * (const double & alval, const Complex & arval)
-    {
-    Complex r;
-    r.re = alval * arval.re;
-    r.im = alval * arval.im;
-    return r;
-    }
+Complex operator * (const double &aLval, const Complex &aRval)
+{
+    Complex Result;
+    Result.Re = aLval * aRval.Re;
+    Result.Im = aLval * aRval.Im;
+    return Result;
+}
