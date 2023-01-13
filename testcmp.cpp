@@ -21,6 +21,5 @@ int main()
     cin >> D;
     A += C + D;
     cout << "D = " << D << "\nA = " << A << endl;
-
     return 0;
 }
