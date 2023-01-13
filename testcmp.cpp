@@ -4,7 +4,6 @@
 using namespace std;
 
 int main()
-
 {
     //Тестирование класса комплексных чисел
     Complex A, B(-4), C(23.0, 45.9);
